@@ -1,0 +1,67 @@
+{
+  "dateAgo": {
+    "format": "dddd DD MMMM YYYY, HH:mm"
+  },
+  "actionsButton": {
+    "label": "Actions"
+  },
+  "confirmMenuItem": {
+    "confirmText": "Cliquer pour confirmer"
+  },
+  "confirmModal": {
+    "confirmText": "Confirmer",
+    "heading": "Etes-vous sûr ?"
+  },
+  "confirmPopover": {
+    "confirmText": "Confirmer",
+    "heading": "Etes-vous sûr ?"
+  },
+  "errorBoundary": {
+    "title": "Une erreur inattendue est survenue.",
+    "actions": {
+      "expand": "Afficher les détails"
+    }
+  },
+  "errorPage": {
+    "errorCode": "Erreur {{code}}",
+    "403": {
+      "title": "Page non autorisée",
+      "description": "Désolé, vous ne pouvez pas accéder à cette page."
+    },
+    "404": {
+      "title": "Page introuvable",
+      "description": "La page n'existe pas ou l'URL a changé."
+    },
+    "default": {
+      "title": "Erreur",
+      "description": "Une erreur est survenue 😞"
+    }
+  },
+  "pagination": {
+    "firstPage": "Première page",
+    "lastPage": "Dernière page",
+    "loading": "<spinner></spinner> <box>Chargement...</box> <strong>{{firstItemOnPage}}</strong> <span>à</span> <strong>{{lastItemOnPage}}</strong> <span> \nsur</span> <strong>{{totalItems}}</strong> <box>résultats</box>",
+    "nextPage": "Page suivante",
+    "prevPage": "Page précédente",
+    "showing": "<box>Affichage de</box> <strong>{{firstItemOnPage}}</strong> <span>à</span> <strong>{{lastItemOnPage}}</strong> <span>sur</span> <strong \n>{{totalItems}}</strong> <box>résultats</box>"
+  },
+  "searchInput": {
+    "clear": "Effacer la recherche",
+    "placeholder": "Rechercher..."
+  },
+  "fieldDayPicker": {
+    "invalidMessage": "Date invalide"
+  },
+  "fieldRepeater": {
+    "invalidMessage": "Au moins un élément est invalide"
+  },
+  "fieldMultiSelect": {
+    "noOption": "Aucune option"
+  },
+  "sort": {
+    "sortAscending": "Ascendant",
+    "sortDescending": "Descendant",
+    "sortBy": "Trier par",
+    "order": "Ordre"
+  }
+}

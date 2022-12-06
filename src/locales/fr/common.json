@@ -1,0 +1,15 @@
+{
+  "languages": {
+    "en": "Anglais",
+    "fr": "Français",
+    "ar": "Arabe",
+    "sw": "Swahili"
+  },
+  "actions": {
+    "activate": "Activer",
+    "cancel": "Annuler",
+    "deactivate": "Désactiver",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  }
+}

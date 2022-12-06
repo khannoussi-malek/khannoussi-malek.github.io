@@ -1,0 +1,29 @@
+image: node:lts
+
+cache:
+  paths:
+    - node_modules
+    - .yarn
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - echo "Installing dependencies"
+    - yarn install
+    - echo "Building application"
+    - yarn build
+
+test:
+  stage: test
+  script:
+    - yarn install
+    - echo "Checking format code eslint"
+    - yarn eslint .
+    - echo "Checking types"
+    - yarn tsc --noEmit
+    - echo "Running tests"
+    - yarn test:ci
