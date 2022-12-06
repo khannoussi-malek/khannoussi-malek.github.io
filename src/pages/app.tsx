@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, Flex, Progress } from '@chakra-ui/react';
+
+
+import { Flex, Progress } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 
 import { Viewport } from '@/components/Viewport';
-import WithSubnavigation from '@/next/topBar';
+
 
 const Loading = () => (
   <Viewport>

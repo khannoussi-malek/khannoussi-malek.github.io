@@ -6,7 +6,6 @@ import {
 } from '@chakra-ui/icons';
 import {
   Box,
-  Button,
   Collapse,
   Flex,
   Icon,
@@ -16,11 +15,9 @@ import {
   PopoverTrigger,
   Stack,
   Text,
-  useBreakpointValue,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 
 import { Logo } from '@/components/Logo';
 

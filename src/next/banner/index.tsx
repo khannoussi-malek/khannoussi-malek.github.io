@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
+
+
 import {
   Box,
-  Button,
   CloseButton,
   Collapse,
   Icon,
@@ -16,6 +17,7 @@ import {
 } from '@chakra-ui/react';
 import { FaFacebookF, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdOutlineConnectWithoutContact } from 'react-icons/md';
+
 
 export const Banner = () => {
   const { isOpen, onToggle } = useDisclosure();
