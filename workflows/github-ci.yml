@@ -1,9 +1,9 @@
-name: 🚀 Start UI [web]
+name: 🚀Malek Khannoussi
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -45,3 +45,6 @@ jobs:
 
       - name: Building
         run: yarn build
+        
+      - name: Starting
+        run: yarn start
