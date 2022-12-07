@@ -26,7 +26,9 @@
     "static:serve": "yarn static:build && npx servor out app.html 5000",
     "theme:generate-typing": "chakra-cli tokens ./src/theme/theme.ts",
     "theme:generate-icons": "svgr --config-file src/components/Icons/svgr.config.js src/components/Icons/svg-sources",
-    "docs:build": "swagger-cli bundle src/mocks/openapi/openapi.yaml -t json --outfile public/open-api.json"
+    "docs:build": "swagger-cli bundle src/mocks/openapi/openapi.yaml -t json --outfile public/open-api.json",
+    "predeploy" : "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": "prettier --write",
@@ -50,6 +52,7 @@
     "cypress": "11.2.0",
     "dayjs": "1.11.6",
     "framer-motion": "7.6.15",
+    "gh-pages": "^4.0.0",
     "i18next": "22.0.6",
     "isomorphic-form-data": "2.0.0",
     "lodash": "4.17.21",
