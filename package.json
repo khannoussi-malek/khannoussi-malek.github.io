@@ -28,7 +28,7 @@
     "theme:generate-typing": "chakra-cli tokens ./src/theme/theme.ts",
     "theme:generate-icons": "svgr --config-file src/components/Icons/svgr.config.js src/components/Icons/svg-sources",
     "docs:build": "swagger-cli bundle src/mocks/openapi/openapi.yaml -t json --outfile public/open-api.json",
-    "predeploy" : "build",
+    "predeploy" : "yarn build",
     "deploy": "gh-pages -d build"
   },
   "lint-staged": {
@@ -118,5 +118,5 @@
     "typescript": "4.9.3"
   },
   "license": "MIT"
-  
+
 }
