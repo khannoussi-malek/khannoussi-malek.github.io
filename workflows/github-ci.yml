@@ -1,9 +1,9 @@
-name: 🚀Malek Khannoussi
+name: 🚀 Malek Khannoussi
 
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -45,6 +45,3 @@ jobs:
 
       - name: Building
         run: yarn build
-        
-      - name: Starting
-        run: yarn start
