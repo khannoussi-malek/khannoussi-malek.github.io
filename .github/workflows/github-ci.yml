@@ -45,3 +45,6 @@ jobs:
 
       - name: Building
         run: yarn build
+
+      - name: Start
+        run: yarn start
