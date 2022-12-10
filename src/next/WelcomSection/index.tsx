@@ -19,7 +19,7 @@ export const WelecomSection = () => {
   const [speciality, setSpeciality] = useState('');
   let specialityCompter = 0;
   const specialitys = [
-    '👨🏻‍💻 𝐒𝐨𝐟𝐭𝐰𝐚𝐫𝐞 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 𝐒𝐭𝐮𝐝𝐞𝐧𝐭',
+    '👨🏻‍💻 software engineering student',
     '🌐 Web Developer',
     '📱 Mobile Developer',
     '🎨 Front-end developer',
@@ -128,7 +128,7 @@ export const WelecomSection = () => {
               px="8"
               fontSize="md"
             >
-              Get Started Now
+              💁‍♂️ More details
             </Button>
             <Button
               size="lg"
@@ -140,7 +140,7 @@ export const WelecomSection = () => {
               shadow="base"
               fontSize="md"
             >
-              Talk to an expert
+              🚀 Projects
             </Button>
           </Stack>
         </Box>

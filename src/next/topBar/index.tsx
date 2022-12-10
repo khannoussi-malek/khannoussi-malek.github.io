@@ -98,6 +98,7 @@ const DesktopNav = () => {
                   textDecoration: 'none',
                   color: linkHoverColor,
                 }}
+                cursor="pointer"
               >
                 {navItem.label}
               </Box>
@@ -134,6 +135,7 @@ const DesktopSubNav = ({ label, href = '/', subLabel }: NavItem) => {
       p={2}
       rounded={'md'}
       _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      cursor="pointer"
     >
       <Stack as="a" direction={'row'} align={'center'}>
         <Box>

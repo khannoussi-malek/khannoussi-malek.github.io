@@ -3,6 +3,7 @@ import React from 'react';
 import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 
+import { VerticalSteps } from '@/next/VerticalSteps';
 import { WelecomSection } from '@/next/WelcomSection';
 import { Banner } from '@/next/banner';
 import { Footer } from '@/next/footer';
@@ -15,11 +16,12 @@ const Index = () => {
       <Head>
         <title>Start UI</title>
       </Head>
-      <Box minW="100%" minH="100vh">
+      <Box minW="100%" minH="100vh" userSelect="none">
         <WithSubnavigation />
         <Banner />
         <WelecomSection />
         <UserCard />
+        <VerticalSteps />
         <Footer />
       </Box>
     </>
