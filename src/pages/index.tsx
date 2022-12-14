@@ -21,7 +21,7 @@ const Index = () => {
         <Banner />
         <WelecomSection />
         <UserCard />
-        <VerticalSteps />
+        {/* <VerticalSteps /> //TODO this part should be done after skills section */}
         <Footer />
       </Box>
     </>
