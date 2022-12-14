@@ -3,7 +3,6 @@ import React from 'react';
 import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 
-import { VerticalSteps } from '@/next/VerticalSteps';
 import { WelecomSection } from '@/next/WelcomSection';
 import { Banner } from '@/next/banner';
 import { Footer } from '@/next/footer';
