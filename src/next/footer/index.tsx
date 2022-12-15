@@ -16,6 +16,7 @@ export const Footer = () => (
     as="footer"
     role="contentinfo"
     minW="100%"
+    bg="gray.100"
     px={{ base: 1, md: 20 }}
     pt={{ base: '12', md: '16' }}
     pb="4"
