@@ -10,7 +10,6 @@ import {
   Text,
   Wrap,
   chakra,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { GoCalendar, GoGlobe } from 'react-icons/go';
 import { Parallax } from 'react-scroll-parallax';

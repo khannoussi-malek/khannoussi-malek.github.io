@@ -9,7 +9,7 @@ import { WelecomSection } from '@/next/WelcomSection';
 import { Banner } from '@/next/banner';
 import { Footer } from '@/next/footer';
 import WithSubnavigation from '@/next/topBar';
-import { BannerDivider, SceneBanser, UserCard } from '@/next/userCard';
+import { UserCard } from '@/next/userCard';
 
 const Index = () => {
   return (
