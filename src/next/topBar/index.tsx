@@ -4,6 +4,7 @@ import {
   CloseIcon,
   HamburgerIcon,
 } from '@chakra-ui/icons';
+import { useBreakpointValue } from '@chakra-ui/media-query';
 import {
   Box,
   Collapse,
@@ -27,6 +28,7 @@ import { Logo } from '@/components/Logo';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box left="0" top={0} position="fixed" zIndex={99} w="100vw">
@@ -41,20 +43,23 @@ export default function WithSubnavigation() {
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
       >
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
+        {isMobile && (
+          <Flex ml={{ base: -2 }}>
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={'ghost'}
+              aria-label={'Toggle Navigation'}
+            />
+          </Flex>
+        )}
+
         <Flex
           flex={{ base: 1 }}
           justify={{ base: 'center', md: 'start' }}
@@ -62,11 +67,15 @@ export default function WithSubnavigation() {
         >
           <Logo />
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
+          {!isMobile && (
+            <Flex ml={10} w="full">
+              <DesktopNav />
+            </Flex>
+          )}
         </Flex>
+
         <IconButton
+          mx={4}
           aria-label="dark mode"
           icon={
             <CIcon
@@ -77,12 +86,6 @@ export default function WithSubnavigation() {
           }
           onClick={() => toggleColorMode()}
         />
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}
-        ></Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>

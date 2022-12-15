@@ -62,7 +62,14 @@ const Skill: FC<SkillProps> = ({ icon, text }) => {
   return (
     <Parallax scale={[0, 1.6]} opacity={[0.4, 1]}>
       <Tooltip label={text}>
-        <Stack w="fit-content" textAlign="center" alignItems="center" my="4">
+        <Stack
+          w="fit-content"
+          textAlign="center"
+          alignItems="center"
+          my="4"
+          overflowX="hidden"
+          maxW="100vw"
+        >
           <Icon
             fontSize="80"
             icon={icon}
@@ -122,7 +129,14 @@ export const Skills = () => {
     { icon: BsFileBinary, text: 'Assembly🤭' },
   ];
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.700')} mb={4}>
+    <Box
+      minH="100vh"
+      maxW="100vw"
+      bg={useColorModeValue('gray.100', 'gray.700')}
+      mb={8}
+      mt={-4}
+      overflowX="hidden"
+    >
       <SimpleGrid
         columns={{ base: 1, sm: 1, md: 3, lg: 4 }}
         spacing={10}

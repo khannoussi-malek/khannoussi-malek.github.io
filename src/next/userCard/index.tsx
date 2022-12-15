@@ -25,11 +25,11 @@ export const BannerDivider = () => {
     <chakra.svg
       viewBox="0 0 1440 320"
       position="relative"
-      bottom={0}
+      bottom={-2}
       zIndex="2"
       filter={useColorModeValue(
         'drop-shadow( -9px -9px 16px rgba(0, 0, 0, .5))',
-        'drop-shadow( -9px -9px 16px rgba(250, 250, 250, .5))'
+        'drop-shadow( -9px -9px 20px rgba(250, 250, 250, .5))'
       )}
     >
       <path

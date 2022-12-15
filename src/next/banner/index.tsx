@@ -74,27 +74,35 @@ export const Banner = () => {
             spacing={{ base: '3', md: '2' }}
             align={{ base: 'stretch', md: 'center' }}
           >
-            <IconButton
-              as="a"
-              href="https://www.linkedin.com/in/malek-khannoussi-54726116b/"
-              aria-label="LinkedIn"
-              target="_blank"
-              icon={<FaLinkedin fontSize="1.25rem" />}
-            />
-            <IconButton
-              as="a"
-              href="https://github.com/khannoussi-malek"
-              aria-label="GitHub"
-              target="_blank"
-              icon={<FaGithub fontSize="1.25rem" />}
-            />
-            <IconButton
-              as="a"
-              href="https://www.facebook.com/malek.mikoooo/"
-              target="_blank"
-              aria-label="Facebook"
-              icon={<FaFacebookF fontSize="1.25rem" />}
-            />
+            <Stack
+              direction="row"
+              spacing={{ base: '3', md: '2' }}
+              justifyContent="space-evenly"
+              alignItems="center"
+              align="baseline"
+            >
+              <IconButton
+                as="a"
+                href="https://www.linkedin.com/in/malek-khannoussi-54726116b/"
+                aria-label="LinkedIn"
+                target="_blank"
+                icon={<FaLinkedin fontSize="1.25rem" />}
+              />
+              <IconButton
+                as="a"
+                href="https://github.com/khannoussi-malek"
+                aria-label="GitHub"
+                target="_blank"
+                icon={<FaGithub fontSize="1.25rem" />}
+              />
+              <IconButton
+                as="a"
+                href="https://www.facebook.com/malek.mikoooo/"
+                target="_blank"
+                aria-label="Facebook"
+                icon={<FaFacebookF fontSize="1.25rem" />}
+              />
+            </Stack>
             <CloseButton
               display={{ base: 'none', md: 'inline-flex' }}
               onClick={onToggle}

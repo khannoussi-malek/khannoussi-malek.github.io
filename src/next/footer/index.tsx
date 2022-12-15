@@ -19,7 +19,7 @@ export const Footer = () => (
     minW="100%"
     bg={useColorModeValue('gray.100', 'gray.700')}
     px={{ base: 1, md: 20 }}
-    pt={{ base: '12', md: '16' }}
+    pt={{ base: '20', md: '16' }}
     pb="4"
   >
     <Stack spacing={{ base: '4', md: '5' }} py={{ base: '12', md: '8' }}>
