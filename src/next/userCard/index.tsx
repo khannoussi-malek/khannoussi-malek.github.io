@@ -29,7 +29,7 @@ export const BannerDivider = () => {
       zIndex="2"
       filter={useColorModeValue(
         'drop-shadow( -9px -9px 16px rgba(0, 0, 0, .5))',
-        'drop-shadow( -9px -9px 20px rgba(250, 250, 250, .5))'
+        'drop-shadow( -9px 6px 29px rgba(250, 250, 250, 0.45))'
       )}
     >
       <path

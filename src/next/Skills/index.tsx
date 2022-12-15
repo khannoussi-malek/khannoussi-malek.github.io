@@ -114,7 +114,7 @@ export const Skills = () => {
     { icon: SiSpringboot, text: 'Spring Boot' },
     { icon: IoLogoLaravel, text: 'Laravel' },
     { icon: FaLinux, text: '🐧Linux' },
-    { icon: FaNodeJs, text: 'Nood JS' },
+    { icon: FaNodeJs, text: 'Noode JS' },
     { icon: FaPython, text: '🐍Python' },
     { icon: SiDjango, text: 'Django' },
     { icon: FaVuejs, text: 'Vue' },
