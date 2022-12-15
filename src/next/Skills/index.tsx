@@ -8,6 +8,7 @@ import {
   StackProps,
   Text,
   Tooltip,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { BsFileBinary } from 'react-icons/bs';
@@ -59,14 +60,18 @@ interface SkillProps extends StackProps {
 
 const Skill: FC<SkillProps> = ({ icon, text }) => {
   return (
-    <Parallax scale={[0, 1.3]} opacity={[0.4, 1]}>
+    <Parallax scale={[0, 1.6]} opacity={[0.4, 1]}>
       <Tooltip label={text}>
         <Stack w="fit-content" textAlign="center" alignItems="center" my="4">
-          <Icon fontSize="80" icon={icon} color="purple.700" />
+          <Icon
+            fontSize="80"
+            icon={icon}
+            color={useColorModeValue('purple.700', 'purple.200')}
+          />
           <Badge
             as={Text}
             variant="outline"
-            colorScheme="green"
+            colorScheme={useColorModeValue('green', 'purple')}
             borderRadius="xl"
             fontWeight="bold"
             fontSize="3xl"
@@ -117,14 +122,14 @@ export const Skills = () => {
     { icon: BsFileBinary, text: 'Assembly🤭' },
   ];
   return (
-    <Box minH="100vh" bg="gray.100">
+    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.700')} mb={4}>
       <SimpleGrid
-        columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        columns={{ base: 1, sm: 1, md: 3, lg: 4 }}
         spacing={10}
         justifyItems="center"
       >
         {skills?.map((props, index) => (
-          <Skill {...props} />
+          <Skill {...props} key={index} />
         ))}
       </SimpleGrid>
     </Box>

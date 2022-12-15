@@ -15,14 +15,18 @@ import {
   PopoverTrigger,
   Stack,
   Text,
+  useColorMode,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
+import { Icon as CIcon } from '@/components/Icons';
 import { Logo } from '@/components/Logo';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box left="0" top={0} position="fixed" zIndex={99} w="100vw">
@@ -62,7 +66,17 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
-
+        <IconButton
+          aria-label="dark mode"
+          icon={
+            <CIcon
+              icon={colorMode === 'dark' ? FiSun : FiMoon}
+              fontSize="lg"
+              color="gray.400"
+            />
+          }
+          onClick={() => toggleColorMode()}
+        />
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}

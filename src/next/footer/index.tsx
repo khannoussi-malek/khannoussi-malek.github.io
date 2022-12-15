@@ -6,6 +6,7 @@ import {
   IconButton,
   Stack,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaFacebookF, FaGithub, FaLinkedin } from 'react-icons/fa';
 
@@ -16,12 +17,12 @@ export const Footer = () => (
     as="footer"
     role="contentinfo"
     minW="100%"
-    bg="gray.100"
+    bg={useColorModeValue('gray.100', 'gray.700')}
     px={{ base: 1, md: 20 }}
     pt={{ base: '12', md: '16' }}
     pb="4"
   >
-    <Stack spacing={{ base: '4', md: '5' }}>
+    <Stack spacing={{ base: '4', md: '5' }} py={{ base: '12', md: '8' }}>
       <Stack justify="space-between" direction="row" align="center">
         <Logo />
         <ButtonGroup variant="ghost">

@@ -92,8 +92,8 @@ export const WelecomSection = () => {
             fontWeight="extrabold"
             letterSpacing="tight"
           >
-            Who i am{' '}
-            <Flex h="40" alignItems="center">
+            Who am I{' '}
+            <Flex h="44" alignItems="center">
               <Box
                 as={AnimatedText}
                 color={mode('blue.500', 'blue.300')}
