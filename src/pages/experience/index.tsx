@@ -4,16 +4,16 @@ import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-import { Skills } from '@/next/Skills';
+import { VerticalSteps } from '@/next/VerticalSteps';
 import { WelecomSection } from '@/next/WelcomSection';
 import { Banner } from '@/next/banner';
 import { Footer } from '@/next/footer';
 import WithSubnavigation from '@/next/topBar';
 import { UserCard } from '@/next/userCard';
 
-const Index = () => {
+const Experience = () => {
   return (
-    <>
+    <Box>
       <Head>
         <title>🚀Malek☄️</title>
       </Head>
@@ -23,12 +23,13 @@ const Index = () => {
           <Banner />
           <WelecomSection />
           <UserCard />
-          <Skills />
+          <VerticalSteps />
           <UserCard />
           <Footer />
         </ParallaxProvider>
       </Box>
-    </>
+    </Box>
   );
 };
-export default Index;
+
+export default Experience;

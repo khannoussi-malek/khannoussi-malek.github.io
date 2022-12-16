@@ -31,10 +31,10 @@ import {
   IoLogoLaravel,
   IoLogoReact,
 } from 'react-icons/io5';
-import { SiChakraui, SiPhp, SiSpringboot } from 'react-icons/si';
 import {
   SiApachecordova,
   SiBootstrap,
+  SiChakraui,
   SiCsharp,
   SiCypress,
   SiDjango,
@@ -45,7 +45,9 @@ import {
   SiMongodb,
   SiMysql,
   SiNetlify,
+  SiPhp,
   SiPostgresql,
+  SiSpringboot,
   SiTypescript,
 } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';

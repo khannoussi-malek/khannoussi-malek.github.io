@@ -20,6 +20,21 @@ import { CardContent } from './CardContent';
 import { CardHeader } from './CardHeader';
 import { UserAvatar } from './UserAvatar';
 
+export const RandomStar = () => (
+  <Box
+    position="relative"
+    zIndex="0"
+    boxShadow="0 0 60px 1px #fff,0 0 100px 4px #f0f,0 0 140px 5px #0ff"
+    top={`${Math.floor(Math.random() * 70)}%`}
+    left={Math.floor(Math.random() * 100) + '%'}
+    w={Math.floor(Math.random() * 3) + 'px'}
+    h={Math.floor(Math.random() * 3) + 'px'}
+    bg="white"
+    borderRadius="full"
+    opacity={Math.floor(Math.random() * 3)}
+  />
+);
+
 export const BannerDivider = () => {
   return (
     <chakra.svg
@@ -44,6 +59,12 @@ export const BannerDivider = () => {
 export const UserCard = () => {
   return (
     <Box as="section" pt={{ base: '8', md: '12' }} overflowY="hidden">
+      <Box position="absolute" w="full" h="100vh">
+        {Array.from({ length: 200 }).map((_, i) => (
+          <RandomStar key={i} />
+        ))}
+      </Box>
+
       <Parallax style={{ zIndex: 1 }} translateY={['-100vh', '150vh']}>
         <Card my={20} shadow="xl">
           <Stack

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Stack } from '@chakra-ui/react';
+import { Box, Stack, useColorModeValue } from '@chakra-ui/react';
 
 import { Step } from './Step';
 import { steps } from './data';
@@ -12,7 +12,12 @@ export const VerticalSteps = () => {
     initialStep: 2,
   });
   return (
-    <Box my="10" px={{ base: '6', lg: '12' }}>
+    <Box
+      zIndex="2"
+      py="40"
+      px={{ base: '6', lg: '12' }}
+      bg={useColorModeValue('gray.100', 'gray.700')}
+    >
       <Stack spacing="0">
         {steps.map((step, id) => (
           <Step

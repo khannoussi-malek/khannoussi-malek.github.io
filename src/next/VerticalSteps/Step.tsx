@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-import { Box, BoxProps, Divider, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  Divider,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { StepCircle } from './StepCircle';
 
@@ -23,7 +30,8 @@ export const Step = (props: StepProps) => {
     description,
     ...stackProps
   } = props;
-
+  const bg = useColorModeValue('gray.50', 'gray.600');
+  const borderColor = isLastStep ? 'transparent' : 'inherit';
   return (
     <Stack spacing="4" direction="row" {...stackProps}>
       <Stack spacing="0" align="center">
@@ -31,16 +39,15 @@ export const Step = (props: StepProps) => {
         <Divider
           orientation="vertical"
           borderWidth="1px"
-          borderColor={
-            isCompletedBar ? 'accent' : isLastStep ? 'transparent' : 'inherit'
-          }
+          borderColor={isCompletedBar ? 'accent' : borderColor}
         />
       </Stack>
       <Stack spacing="0.5" pb={isLastStep ? '0' : '8'} w="full">
         <Box
           p="8"
           pt="2"
-          bg={isActive ? 'gray.100' : 'inherit'}
+          bg={isActive ? bg : 'inherit'}
+          borderRadius="lg"
           boxShadow={isActive ? 'lg' : 'inherit'}
           mr={isActive ? '8' : '0'}
         >

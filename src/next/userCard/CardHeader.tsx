@@ -6,6 +6,7 @@ import {
   Heading,
   IconButton,
   Stack,
+  Tooltip,
   useColorMode,
 } from '@chakra-ui/react';
 import { FiMoon, FiSun } from 'react-icons/fi';
@@ -34,17 +35,19 @@ export const CardHeader = (props: CardHeaderProps) => {
         </Heading>
         {action}
       </Flex>
-      <IconButton
-        aria-label="dark mode"
-        icon={
-          <CIcon
-            icon={colorMode === 'dark' ? FiSun : FiMoon}
-            fontSize="lg"
-            color="gray.400"
-          />
-        }
-        onClick={() => toggleColorMode()}
-      />
+      <Tooltip label={colorMode === 'dark' ? 'Make it 🌅' : "Let's see 🌠"}>
+        <IconButton
+          aria-label="dark mode"
+          icon={
+            <CIcon
+              icon={colorMode === 'dark' ? FiSun : FiMoon}
+              fontSize="lg"
+              color="gray.400"
+            />
+          }
+          onClick={() => toggleColorMode()}
+        />
+      </Tooltip>
     </Stack>
   );
 };

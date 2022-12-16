@@ -7,6 +7,7 @@ import {
 import { useBreakpointValue } from '@chakra-ui/media-query';
 import {
   Box,
+  BoxProps,
   Collapse,
   Flex,
   Icon,
@@ -16,10 +17,12 @@ import {
   PopoverTrigger,
   Stack,
   Text,
+  Tooltip,
   useColorMode,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { Icon as CIcon } from '@/components/Icons';
@@ -65,27 +68,29 @@ export default function WithSubnavigation() {
           justify={{ base: 'center', md: 'start' }}
           alignItems="center"
         >
-          <Logo />
-
+          <Link href="/">
+            <Logo />
+          </Link>
           {!isMobile && (
             <Flex ml={10} w="full">
               <DesktopNav />
             </Flex>
           )}
         </Flex>
-
-        <IconButton
-          mx={4}
-          aria-label="dark mode"
-          icon={
-            <CIcon
-              icon={colorMode === 'dark' ? FiSun : FiMoon}
-              fontSize="lg"
-              color="gray.400"
-            />
-          }
-          onClick={() => toggleColorMode()}
-        />
+        <Tooltip label={colorMode === 'dark' ? 'Make it 🌅' : "Let's see 🌠"}>
+          <IconButton
+            mx={4}
+            aria-label="dark mode"
+            icon={
+              <CIcon
+                icon={colorMode === 'dark' ? FiSun : FiMoon}
+                fontSize="lg"
+                color="gray.400"
+              />
+            }
+            onClick={() => toggleColorMode()}
+          />
+        </Tooltip>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -102,44 +107,50 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Box
-                p={2}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}
-                cursor="pointer"
-              >
-                {navItem.label}
-              </Box>
-            </PopoverTrigger>
+      {NAV_ITEMS.map((navItem) => {
+        const navItemProps = !!navItem.href
+          ? ({ href: `${navItem.href}`, as: Link } as BoxProps)
+          : ({ as: 'a' } as BoxProps);
+        return (
+          <Box key={navItem.label}>
+            <Popover trigger={'hover'} placement={'bottom-start'}>
+              <PopoverTrigger>
+                <Box
+                  p={2}
+                  fontSize={'sm'}
+                  fontWeight={500}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: linkHoverColor,
+                  }}
+                  {...navItemProps}
+                  cursor="pointer"
+                >
+                  {navItem.label}
+                </Box>
+              </PopoverTrigger>
 
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
+              {navItem.children && (
+                <PopoverContent
+                  border={0}
+                  boxShadow={'xl'}
+                  bg={popoverContentBgColor}
+                  p={4}
+                  rounded={'xl'}
+                  minW={'sm'}
+                >
+                  <Stack>
+                    {navItem.children.map((child) => (
+                      <DesktopSubNav key={child.label} {...child} />
+                    ))}
+                  </Stack>
+                </PopoverContent>
+              )}
+            </Popover>
+          </Box>
+        );
+      })}
     </Stack>
   );
 };
@@ -285,11 +296,11 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: 'Learn Design',
-    href: '/',
+    label: 'experience',
+    href: '/experience',
   },
   {
-    label: 'Hire Designers',
+    label: 'Skills',
     href: '/',
   },
 ];
