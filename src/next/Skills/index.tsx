@@ -7,9 +7,9 @@ import {
   Stack,
   StackProps,
   Text,
-  Tooltip,
   useColorModeValue,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { BsFileBinary } from 'react-icons/bs';
 import {
@@ -58,50 +58,55 @@ import { Icon } from '@/components/Icons';
 interface SkillProps extends StackProps {
   icon: FC<React.PropsWithChildren<unknown>>;
   text: string;
+  href?: string;
 }
 
-const Skill: FC<SkillProps> = ({ icon, text }) => {
+const Skill: FC<SkillProps> = ({ icon, text, href = '/' }) => {
   return (
     <Parallax scale={[0, 1.6]} opacity={[0.4, 1]}>
-      <Tooltip label={text}>
-        <Stack
-          w="fit-content"
-          textAlign="center"
-          alignItems="center"
-          my="4"
-          overflowX="hidden"
-          maxW="100vw"
+      <Stack
+        as={Link}
+        href={href}
+        w="fit-content"
+        textAlign="center"
+        alignItems="center"
+        my="4"
+        overflowX="hidden"
+        maxW="100vw"
+      >
+        <Icon
+          fontSize="80"
+          icon={icon}
+          color={useColorModeValue('purple.700', 'purple.200')}
+        />
+        <Badge
+          as={Text}
+          variant="outline"
+          colorScheme={useColorModeValue('green', 'purple')}
+          borderRadius="xl"
+          fontWeight="bold"
+          fontSize="3xl"
         >
-          <Icon
-            fontSize="80"
-            icon={icon}
-            color={useColorModeValue('purple.700', 'purple.200')}
-          />
-          <Badge
-            as={Text}
-            variant="outline"
-            colorScheme={useColorModeValue('green', 'purple')}
-            borderRadius="xl"
-            fontWeight="bold"
-            fontSize="3xl"
-          >
-            {text}
-          </Badge>
-        </Stack>
-      </Tooltip>
+          {text}
+        </Badge>
+      </Stack>
     </Parallax>
   );
 };
 export const Skills = () => {
   const skills = [
-    { icon: AiFillHtml5, text: 'HTML' },
-    { icon: IoLogoCss3, text: '🎨CSS' },
-    { icon: IoLogoJavascript, text: 'JavaScript🌠' },
-    { icon: SiTypescript, text: '✨TypeScript✨' },
+    { icon: AiFillHtml5, text: 'HTML', href: '/blog/html' },
+    { icon: IoLogoCss3, text: '🎨CSS', href: '/blog/css' },
+    { icon: IoLogoJavascript, text: 'JavaScript🌠', href: '/blog/javascript' },
+    { icon: SiTypescript, text: '✨TypeScript✨', href: '/blog/typescript' },
     { icon: SiPhp, text: 'PHP' },
-    { icon: IoLogoReact, text: '⚛️React🔥' },
+    { icon: IoLogoReact, text: '⚛️React🔥', href: '/blog/react' },
     { icon: SiChakraui, text: '⚡️Chakra-Ui' },
-    { icon: TbBrandReactNative, text: 'React-query' },
+    {
+      icon: TbBrandReactNative,
+      text: 'React-query',
+      href: '/blog/reactNative',
+    },
     { icon: IoLogoAngular, text: 'Anguler' },
     { icon: IoLogoIonic, text: 'Ionic' },
     { icon: SiMysql, text: 'MyS QL' },

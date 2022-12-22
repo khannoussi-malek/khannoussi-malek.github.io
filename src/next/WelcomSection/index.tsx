@@ -12,6 +12,7 @@ import {
   Text,
   useColorModeValue as mode,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import AnimatedText from 'react-animated-text-content';
 import { HiArrowRight } from 'react-icons/hi';
 
@@ -54,9 +55,9 @@ export const WelecomSection = () => {
           pb={{ base: '16', lg: '24' }}
         >
           <HStack
+            as={Link}
+            href="/me"
             className="group"
-            as="a"
-            href="#"
             px="2"
             py="1"
             bg={mode('gray.200', 'gray.700')}
