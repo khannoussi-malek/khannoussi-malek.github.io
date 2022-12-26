@@ -14,6 +14,10 @@ function defineNextConfig(config) {
 
 module.exports = defineNextConfig({
   output: 'standalone',
+  experimental: {
+    esmExternals: false,
+    outputStandalone: true,
+  },
   async redirects() {
     return [
       {

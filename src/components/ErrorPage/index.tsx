@@ -43,7 +43,7 @@ export const ErrorPage = ({ errorCode }: { errorCode?: number }) => {
           textAlign={{ base: 'center', md: 'left' }}
           alignItems={{ base: 'center', md: 'flex-start' }}
         >
-          <Link href="/" passHref>
+          <Link rel="preload" href="/" passHref>
             <chakra.a>
               <Logo my={4} />
             </chakra.a>

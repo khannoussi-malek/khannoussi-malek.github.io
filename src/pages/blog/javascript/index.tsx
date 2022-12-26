@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import Head from 'next/head';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
+import { CodeBlock } from '@/components/CodeBlock';
 import { Footer } from '@/next/footer';
 import WithSubnavigation from '@/next/topBar';
 
@@ -11,7 +12,11 @@ const Javascript = () => {
   return (
     <>
       <Head>
-        <title>🚀Malek☄️</title>
+        <title>JavaScript Basics: A Beginner's Guide</title>
+        <meta
+          name="description"
+          content="Learn the fundamentals of JavaScript and get started building interactive, dynamic websites. This beginner's guide covers the basics of JavaScript syntax and concepts."
+        />
       </Head>
       <Box minW="100%" minH="100vh" userSelect="none">
         <ParallaxProvider>
@@ -23,53 +28,77 @@ const Javascript = () => {
             px={{ base: '6', md: '12', lg: '20', xl: '44' }}
             bg={useColorModeValue('gray.100', 'gray.700')}
           >
-            <Text>
-              JavaScript is a programming language that is commonly used in web
-              development to add interactivity and dynamic behavior to websites.
-              It is a client-side language, which means that it is executed by
-              the user's web browser rather than a server.
+            <Heading as="h1">JavaScript Basics: A Beginner's Guide</Heading>
+            <Text as="p">
+              JavaScript is a popular programming language that is used to build
+              interactive, dynamic websites. It allows developers to add
+              features such as animations, form validation, and interactivity to
+              websites.
             </Text>
-            <Text>
-              JavaScript is often used in conjunction with HTML and CSS to
-              create interactive and animated web pages. It can be used to
-              perform a wide range of tasks, such as validating form input,
-              creating cookies, and controlling multimedia elements such as
-              audio and video.
+            <Heading as="h2">Getting Started</Heading>
+            <Text as="p">
+              To get started with JavaScript, you will need a text editor and a
+              web browser. There are many text editors available, such as
+              Sublime Text or Notepad++. You can use any text editor that you
+              are comfortable with.
             </Text>
-            <Text>
-              One of the key features of JavaScript is its ability to manipulate
-              the Document Object Model (DOM). The DOM is a tree-like structure
-              that represents the HTML elements on a web page as objects.
-              JavaScript can be used to access and modify these objects,
-              allowing developers to change the content, style, and layout of a
-              web page in real-time.
+            <Text as="p">
+              To write JavaScript code, you will need to create a new file with
+              a .js extension. Then, you can start writing your code using the
+              basic JavaScript syntax.
             </Text>
-            <Text>
-              JavaScript is a versatile language that can be used to build a
-              wide range of applications, including web-based applications,
-              mobile apps, and desktop applications. It is also used in
-              server-side programming, using platforms such as Node.js.
+            <Heading as="h2">JavaScript Syntax</Heading>
+            <Text as="p">
+              JavaScript uses a syntax similar to other programming languages.
+              It uses statements, variables, and functions to perform tasks.
+              Here is an example of a simple JavaScript statement:
             </Text>
-            <Text>
-              To use JavaScript, you will need a text editor and a web browser.
-              There are many text editors available, both free and paid, such as
-              Sublime Text, Atom, and Visual Studio Code. To test your
-              JavaScript code, you can use any modern web browser, such as
-              Google Chrome, Mozilla Firefox, or Microsoft Edge.
+            <CodeBlock>console.log("Hello, World!");</CodeBlock>
+            <Text as="p">
+              This statement prints the text "Hello, World!" to the console. The
+              console is a tool that developers use to see the output of their
+              code and to debug any problems that may arise.
             </Text>
-            <Text>
-              There are many resources available for learning JavaScript,
-              including online tutorials, books, and video courses. Some popular
-              resources include the JavaScript section of the W3Schools website,
-              the Mozilla Developer Network, and the Codecademy website.
+            <Heading as="h2">Variables</Heading>
+            <Text as="p">
+              Variables are used to store data in JavaScript. They are like
+              containers that hold a value, such as a number or a string of
+              text. Here is an example of how to declare a variable in
+              JavaScript:
             </Text>
-            <Text>
-              Overall, JavaScript is an essential language for web development
-              and is a valuable skill to have in today's tech industry. Whether
-              you are just starting out in programming or are an experienced
-              developer looking to improve your skills, learning JavaScript is a
-              great investment in your career.
-            </Text>{' '}
+            <CodeBlock>var name = "John";</CodeBlock>
+            <Text as="p">
+              In this example, we have declared a variable called "name" and
+              assigned it the value "John". We can then use the variable "name"
+              in our code to refer to the value "John".
+            </Text>
+            <Heading as="h2">Functions</Heading>
+            <Text as="p">
+              Functions are blocks of code that can be called and executed at
+              any time. They are often used to perform a specific task or to
+              perform a series of tasks. Here is an example of a simple function
+              in JavaScript:
+            </Text>
+            <CodeBlock>
+              {`function greet(name) {
+      console.log("Hello, " + name + "!");
+    }`}
+            </CodeBlock>
+            <Text as="p">
+              This function takes in a parameter called "name" and prints a
+              greeting to the console using the value of the parameter. To call
+              this function, we can use the following code:
+            </Text>
+            <CodeBlock>greet("John");</CodeBlock>
+            <Text as="p">This will print "Hello, John!" to the console.</Text>
+            <Heading as="h2">Conclusion</Heading>
+            <Text as="p">
+              These are just a few of the basic concepts of JavaScript. There is
+              much more to learn, but these are the building blocks that will
+              help you get started with the language. With a little practice and
+              some determination, you will be on your way to building dynamic,
+              interactive websites with JavaScript.
+            </Text>
           </Stack>
           <Footer />
         </ParallaxProvider>

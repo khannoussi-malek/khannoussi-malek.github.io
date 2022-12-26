@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {
+  Badge,
   ButtonGroup,
   Container,
   IconButton,
@@ -8,9 +9,12 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { FaFacebookF, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { Logo } from '@/components/Logo';
+
+import { skills } from '../Skills';
 
 export const Footer = () => (
   <Container
@@ -53,6 +57,19 @@ export const Footer = () => (
         &copy; {new Date().getFullYear()} Khannoussi Malek, Inc. All rights
         reserved.
       </Text>
+      <Stack spacing="4" wrap="wrap" direction="row">
+        {skills?.map((value, index) => (
+          <Badge
+            colorScheme="purple"
+            key={index}
+            as={Link}
+            rel="preload"
+            href={value.href || ''}
+          >
+            {value.text}
+          </Badge>
+        ))}
+      </Stack>
     </Stack>
   </Container>
 );

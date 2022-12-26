@@ -66,6 +66,7 @@ const Skill: FC<SkillProps> = ({ icon, text, href = '/' }) => {
     <Parallax scale={[0, 1.6]} opacity={[0.4, 1]}>
       <Stack
         as={Link}
+        rel="preload"
         href={href}
         w="fit-content"
         textAlign="center"
@@ -93,48 +94,48 @@ const Skill: FC<SkillProps> = ({ icon, text, href = '/' }) => {
     </Parallax>
   );
 };
+export const skills = [
+  { icon: AiFillHtml5, text: 'HTML', href: '/blog/html' },
+  { icon: IoLogoCss3, text: '🎨CSS', href: '/blog/css' },
+  { icon: IoLogoJavascript, text: 'JavaScript🌠', href: '/blog/javascript' },
+  { icon: SiTypescript, text: '✨TypeScript✨', href: '/blog/typescript' },
+  { icon: SiPhp, text: 'PHP', href: '/blog/php' },
+  { icon: IoLogoReact, text: '⚛️React🔥', href: '/blog/reactjs' },
+  { icon: SiChakraui, text: '⚡️Chakra-Ui' },
+  {
+    icon: TbBrandReactNative,
+    text: 'React-query',
+    href: '/blog/reactNative',
+  },
+  { icon: IoLogoAngular, text: 'Anguler' },
+  { icon: IoLogoIonic, text: 'Ionic' },
+  { icon: SiMysql, text: 'My SQL' },
+  { icon: SiMicrosoftsqlserver, text: 'Oracle' },
+  { icon: SiPostgresql, text: 'Postgresql' },
+  { icon: FaGitAlt, text: 'Git' },
+  { icon: FaGithubAlt, text: '🦊Github' },
+  { icon: FaGitlab, text: '☄️Gitlab' },
+  { icon: SiMongodb, text: 'Mongo DB' },
+  { icon: IoLogoFirebase, text: '🔥Firebase' },
+  { icon: GrDocker, text: '🐋Docker' },
+  { icon: SiSpringboot, text: 'Spring Boot' },
+  { icon: IoLogoLaravel, text: 'Laravel' },
+  { icon: FaLinux, text: '🐧Linux' },
+  { icon: FaNodeJs, text: 'NodeJS' },
+  { icon: FaPython, text: '🐍Python' },
+  { icon: SiDjango, text: 'Django' },
+  { icon: FaVuejs, text: 'Vue' },
+  { icon: SiApachecordova, text: 'Cordova' },
+  { icon: SiBootstrap, text: 'BootStrap' },
+  { icon: SiCsharp, text: 'C#' },
+  { icon: SiJava, text: 'Java' },
+  { icon: SiGnubash, text: 'Bash' },
+  { icon: SiJest, text: '🕵Jest🕵' },
+  { icon: SiCypress, text: '🕵Cypres🕵' },
+  { icon: SiNetlify, text: 'Netlify' },
+  { icon: BsFileBinary, text: 'Assembly🤭' },
+];
 export const Skills = () => {
-  const skills = [
-    { icon: AiFillHtml5, text: 'HTML', href: '/blog/html' },
-    { icon: IoLogoCss3, text: '🎨CSS', href: '/blog/css' },
-    { icon: IoLogoJavascript, text: 'JavaScript🌠', href: '/blog/javascript' },
-    { icon: SiTypescript, text: '✨TypeScript✨', href: '/blog/typescript' },
-    { icon: SiPhp, text: 'PHP' },
-    { icon: IoLogoReact, text: '⚛️React🔥', href: '/blog/react' },
-    { icon: SiChakraui, text: '⚡️Chakra-Ui' },
-    {
-      icon: TbBrandReactNative,
-      text: 'React-query',
-      href: '/blog/reactNative',
-    },
-    { icon: IoLogoAngular, text: 'Anguler' },
-    { icon: IoLogoIonic, text: 'Ionic' },
-    { icon: SiMysql, text: 'MyS QL' },
-    { icon: SiMicrosoftsqlserver, text: 'Oracle' },
-    { icon: SiPostgresql, text: 'Postgresql' },
-    { icon: FaGitAlt, text: 'Git' },
-    { icon: FaGithubAlt, text: '🦊Github' },
-    { icon: FaGitlab, text: '☄️Gitlab' },
-    { icon: SiMongodb, text: 'Mongo DB' },
-    { icon: IoLogoFirebase, text: '🔥Firebase' },
-    { icon: GrDocker, text: '🐋Docker' },
-    { icon: SiSpringboot, text: 'Spring Boot' },
-    { icon: IoLogoLaravel, text: 'Laravel' },
-    { icon: FaLinux, text: '🐧Linux' },
-    { icon: FaNodeJs, text: 'Noode JS' },
-    { icon: FaPython, text: '🐍Python' },
-    { icon: SiDjango, text: 'Django' },
-    { icon: FaVuejs, text: 'Vue' },
-    { icon: SiApachecordova, text: 'Cordova' },
-    { icon: SiBootstrap, text: 'BootStrap' },
-    { icon: SiCsharp, text: 'C#' },
-    { icon: SiJava, text: 'Java' },
-    { icon: SiGnubash, text: 'Bash' },
-    { icon: SiJest, text: '🕵Jest🕵' },
-    { icon: SiCypress, text: '🕵Cypres🕵' },
-    { icon: SiNetlify, text: 'Netlify' },
-    { icon: BsFileBinary, text: 'Assembly🤭' },
-  ];
   return (
     <Box
       minH="100vh"

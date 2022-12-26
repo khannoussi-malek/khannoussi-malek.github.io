@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 import { GoVerified } from 'react-icons/go';
 
+import { Image } from '@/components/Image';
+
 interface UserAvatarProps extends AvatarProps {
   isVerified?: boolean;
 }
@@ -19,7 +21,7 @@ export const UserAvatar = (props: UserAvatarProps) => {
   const iconColor = useColorModeValue('blue.500', 'blue.200');
 
   return (
-    <Avatar size="2xl" {...avatarProps}>
+    <Avatar loading="lazy" size="2xl" {...avatarProps}>
       {isVerified && (
         <AvatarBadge
           borderWidth="4px"

@@ -68,7 +68,7 @@ export default function WithSubnavigation() {
           justify={{ base: 'center', md: 'start' }}
           alignItems="center"
         >
-          <Link href="/">
+          <Link href="/" rel="preload">
             <Logo />
           </Link>
           {!isMobile && (
@@ -109,7 +109,7 @@ const DesktopNav = () => {
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => {
         const navItemProps = !!navItem.href
-          ? ({ href: `${navItem.href}`, as: Link } as BoxProps)
+          ? ({ href: `${navItem.href}`, as: Link, rel: 'preload' } as BoxProps)
           : ({ as: 'a' } as BoxProps);
         return (
           <Box key={navItem.label}>

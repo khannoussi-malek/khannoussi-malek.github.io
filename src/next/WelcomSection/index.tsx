@@ -7,7 +7,6 @@ import {
   Flex,
   HStack,
   Heading,
-  Img,
   Stack,
   Text,
   useColorModeValue as mode,
@@ -15,6 +14,8 @@ import {
 import Link from 'next/link';
 import AnimatedText from 'react-animated-text-content';
 import { HiArrowRight } from 'react-icons/hi';
+
+import { Image } from '@/components/Image';
 
 export const WelecomSection = () => {
   const [speciality, setSpeciality] = useState('');
@@ -56,6 +57,7 @@ export const WelecomSection = () => {
         >
           <HStack
             as={Link}
+            rel="preload"
             href="/me"
             className="group"
             px="2"
@@ -158,13 +160,14 @@ export const WelecomSection = () => {
         }}
         maxH="80vh"
       >
-        <Img
-          h="100%"
-          w="100%"
+        <Image
+          loading="lazy"
+          height="766"
+          width="866"
           objectFit="cover"
           objectPosition="top"
           src="/images/rewards.jpg"
-          alt="Lady working"
+          alt="malek khannoussi"
         />
       </Box>
     </Box>

@@ -71,7 +71,11 @@ export const UserCard = () => {
             direction={{ base: 'column', md: 'row' }}
             spacing={{ base: '4', md: '10' }}
           >
-            <UserAvatar name="Samantha" src="./images/me.jpeg" isVerified />
+            <UserAvatar
+              name="Malek Khannoussi"
+              src="./images/me.jpeg"
+              isVerified
+            />
 
             <CardContent>
               <CardHeader title="Khannoussi malek" action={null} />

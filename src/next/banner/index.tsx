@@ -60,7 +60,7 @@ export const Banner = () => {
             <Stack spacing="0.5" pe={{ base: '4', md: '0' }}>
               <Text fontWeight="medium">what are you waiting for </Text>
               <Text color="on-accent-muted">
-                <Link>contact me</Link>
+                <Link rel="preload">contact me</Link>
               </Text>
             </Stack>
             {isMobile && (
